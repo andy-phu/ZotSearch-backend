@@ -614,19 +614,19 @@ class SearchEngine:
 
 def run():
     # Open the mappings file, opening the index, parse into a dictionary, and put it into searchengine object
-    with open('FinalDocuments/mapping.txt', 'r') as mappingsFile, open('FinalDocuments/invertedIndexFinalWithSkips.txt',
+    with open('../FinalDocuments/mapping.txt', 'r') as mappingsFile, open('../FinalDocuments/invertedIndexFinalWithSkips.txt',
                                                                        'r') as invIndexFile, open(
-            'FinalDocuments/documentLengths.txt', 'r') as lengthOfDocs, open(
-            'Important_Words_Files/boldWords.txt') as boldWordsFile, open(
-            'Important_Words_Files/headerWords.txt') as headerWordsFile, open(
-            'Important_Words_Files/titleWords.txt') as titleWordsFile:
+            '../FinalDocuments/documentLengths.txt', 'r') as lengthOfDocs, open(
+            '../Important_Words_Files/boldWords.txt') as boldWordsFile, open(
+            '../Important_Words_Files/headerWords.txt') as headerWordsFile, open(
+            '../Important_Words_Files/titleWords.txt') as titleWordsFile:
 
         # CAUTION - This line of code takes a while! Make sure to only perform this initialization ONCE
         engine = SearchEngine(PorterStemmer(), re.compile('[a-zA-Z0-9]+'), invIndexFile, mappingsFile,
-                              'FinalDocuments/index_Of_The_Index_Final.txt', lengthOfDocs, boldWordsFile,
-                              'Important_Words_Files/bold_words_Index_of_Index.txt', headerWordsFile,
-                              'Important_Words_Files/header_words_Index_of_Index.txt', titleWordsFile,
-                              'Important_Words_Files/title_words_Index_of_Index.txt')
+                              '../FinalDocuments/index_Of_The_Index_Final.txt', lengthOfDocs, boldWordsFile,
+                              '../Important_Words_Files/bold_words_Index_of_Index.txt', headerWordsFile,
+                              '../Important_Words_Files/header_words_Index_of_Index.txt', titleWordsFile,
+                              '../Important_Words_Files/title_words_Index_of_Index.txt')
 
         while True:
             # Prompt user for input - user can exit with ctrl C
